@@ -89,9 +89,9 @@
 						</li>
 						<li class="nav-item">
 							<a href="#" data-toggle="modal" data-target="#BackdropHealth" class="nav-link">
-								<i class="nav-icon fa-solid fa-file-waveform"></i>
+								<i class="nav-icon fa-solid fa-calendar"></i>
 								<p>
-									Health Form
+									Schedule Appointment
 								</p>
 							</a>
 						</li>
@@ -113,6 +113,8 @@
 		</aside>
 
 		<!-- modal -->
+		<!-- modal -->
+		<!-- modal -->
 		<div class="modal fade" id="BackdropHealth" data-backdrop="static" data-keyboard="false" tabindex="-1"
 			aria-labelledby="staticBackdropLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg modal-dialog-centered">
@@ -122,7 +124,7 @@
 
 						</div>
 						<div class="col-lg-4">
-							<h5 class="modal-title col-12 text-center" id="staticBackdropLabel">Health Form
+							<h5 class="modal-title col-12 text-center" id="staticBackdropLabel">Schedule an appointment
 							</h5>
 						</div>
 						<div class="col-lg-4">
@@ -132,114 +134,85 @@
 						</div>
 					</div>
 
-					<form action="<?= site_url('health/add') ?>" method="post">
+					<form action="<?= site_url('schedule/add') ?>" method="post">
 						<div class="modal-body">
 							<div class="row">
 								<div class="col">
 
-									<label for="emp_id">Employee ID :</label>
-									<input type="text" class="form-control" placeholder="Employee ID" id="emp_id"
-										name="emp_id" value="" required="">
+									<label for="FirstName">FirstName :</label>
+									<input type="text" class="form-control" placeholder="FirstName" id="FirstName"
+										name="FirstName" value="" required="">
+								</div>
+								<div class="col">
+
+									<label for="MiddleName">MiddleName :</label>
+									<input type="text" class="form-control" placeholder="MiddleName" id="MiddleName"
+										name="MiddleName" value="" required="">
+								</div>
+								<div class="col">
+
+									<label for="LastName">LastName :</label>
+									<input type="text" class="form-control" placeholder="LastName" id="LastName" name="LastName"
+										value="" required="">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col">
 
-									<label for="ill_id">Illness :</label>
-									<select class="form-control" name="ill_id" id="ill_id" placeholder="Illness" required="">
-										<option value="1">Lagnat</option>
-										<option value="2">Trankaso</option>
-										<option value="3">Covid-19</option>
-										<option value="4">Migrane</option>
-										<option value="5">Cancer</option>
-										<option value="6">Aids</option>
-									</select>
+									<label for="Address">Address:</label>
+									<input type="text" class="form-control" placeholder="Address" id="Address"
+										name="Address" value="" required="">
 								</div>
-							</div>
+								<div class="col">
 
+									<label for="Birthdate">Birthdate :</label>
+									<input type="date" class="form-control" placeholder="Birthdate" id="Birthdate"
+										name="Birthdate" value="" required="">
+								</div>
+
+							</div>
+							<div class="col">
+								<label for="Age">Age :</label>
+								<input type="text" class="form-control" placeholder="Age" id="Age" name="Age"
+									value="" required="">
+							</div>
+							<div class="col">
+								<label for="Sex">Sex :</label>
+								<input type="text" class="form-control" placeholder="Sex" id="Sex" name="Sex"
+									value="" required="">
+							</div>
+							<div class="col">
+								<label for="Status">Status :</label>
+								<input type="text" class="form-control" placeholder="Status" id="Status" name="Status"
+									value="" required="">
+							</div>
+							<div class="col">
+								<label for="Contact_Num">Contact_Num :</label>
+								<input type="text" class="form-control" placeholder="Contact_Num" id="Contact_Num" name="Contact_Num"
+									value="" required="">
+							</div>
+							<div class="col">
+								<label for="AppointmentDate">AppointmentDate :</label>
+								<input type="date" class="form-control" placeholder="AppointmentDate" id="AppointmentDate" name="AppointmentDate"
+									value="" required="">
+							</div>
+							<div class="col">
+								<label for="ill_id">Illness :</label>
+								<select class="form-control" name="ill_id" id="ill_id" placeholder="Illness" required="">
+									<option value="1">Lagnat</option>
+									<option value="2">Trankaso</option>
+									<option value="3">Covid-19</option>
+									<option value="4">Migrane</option>
+									<option value="5">Cancer</option>
+									<option value="6">Aids</option>
+								</select>
+							</div>
 						</div>
 
 
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 							<button type="submit" class="btn btn-primary">Submit</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- MODAL PROFILE -->
-		<div class="modal fade" id="BackdropProfile" data-backdrop="static" data-keyboard="false" tabindex="-1"
-			aria-labelledby="staticBackdropLabel" aria-hidden="true">
-			<div class="modal-dialog modal-lg modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<div class="col-lg-4">
-
-						</div>
-						<div class="col-lg-4">
-							<h5 class="modal-title col-12 text-center" id="staticBackdropLabel">
-								Profile
-							</h5>
-						</div>
-						<div class="col-lg-4">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-					</div>
-
-					<form action="<?= site_url('health/add') ?>" method="post">
-						<div class="modal-body">
-							<div class="row">
-								<div class="col">
-									<p>Last Name : <span><?php echo $this->session->userdata('lname'); ?></span></hp>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">
-									<p>First Name : <span><?php echo $this->session->userdata('fname'); ?></span>
-										</hp>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">
-									<p>Address : <span><?php echo $this->session->userdata('address'); ?></span></hp>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">
-									<p>Contact : <span><?php echo $this->session->userdata('contact'); ?></span></hp>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">
-									<p>Email : <span><?php echo $this->session->userdata('email'); ?></span></hp>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">
-									<p>Role ID : <span><?php echo $this->session->userdata('role_id'); ?></span></hp>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">
-									<p>User ID : <span><?php echo $this->session->userdata('user_id'); ?></span></hp>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">
-									<p>Employee ID : <span><?php echo $this->session->userdata('emp_id'); ?></span>
-										</hp>
-								</div>
-							</div>
-						</div>
-
-
-
-
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 						</div>
 					</form>
 				</div>

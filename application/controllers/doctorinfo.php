@@ -10,14 +10,13 @@ class doctorinfo extends CI_Controller
 	public function index()
 	{
 		$role = $this->session->userdata('role_id');
+		$data['doctorinfo'] = $this->doctorinfo_model->rows();
 
 		if ($role == 4 || $role == 3) {
-			$data['doctorinfo'] = $this->doctorinfo_model->rows();
 			$this->load->view('templates/admin_header');
 			$this->load->view('doctorinfo/index', $data);
 			$this->load->view('templates/Footer');
 		} elseif ($role == 2 || $role == 1) {
-			$data['doctorinfo'] = $this->doctorinfo_model->rows();
 			$this->load->view('templates/employee_header');
 			$this->load->view('employee/index', $data);
 			$this->load->view('templates/Footer');
@@ -30,7 +29,6 @@ class doctorinfo extends CI_Controller
 
 	public function add()
 	{
-
 		$this->form_validation->set_rules('FirstName', 'FirstName',  'trim|required');
 		$this->form_validation->set_rules('MiddleName', 'MiddleName',  'trim|required');
 		$this->form_validation->set_rules('LastName', 'LastName',  'trim|required');
@@ -41,7 +39,6 @@ class doctorinfo extends CI_Controller
 
 		if ($this->form_validation->run()) {
 			$data = array(
-
 				'FirstName'     => $this->input->post('FirstName'),
 				'MiddleName'     => $this->input->post('MiddleName'),
 				'LastName'      => $this->input->post('LastName'),
@@ -49,9 +46,6 @@ class doctorinfo extends CI_Controller
 				'Email'     => $this->input->post('Email'),
 				'Specialization'  => $this->input->post('Specialization'),
 				'Address'      => $this->input->post('Address')
-
-
-
 			);
 
 			$result = $this->doctorinfo_model->add($data);

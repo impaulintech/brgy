@@ -12,13 +12,14 @@ class Employee extends CI_Controller
 	public function index()
 	{
 		$role = $this->session->userdata('role_id');
+		$data['user_name'] = 'asd';
+		$data['employee'] = $this->employee_model->rows();
+		
 		if ($role == 4 || $role == 3) {
-			$data['employee'] = $this->employee_model->rows();
 			$this->load->view('templates/admin_header');
 			$this->load->view('employee/index', $data);
 			$this->load->view('templates/Footer');
 		} elseif ($role == 2) {
-			$data['employee'] = $this->employee_model->rows();
 			$this->load->view('templates/hr_header');
 			$this->load->view('employee/index', $data);
 			$this->load->view('templates/Footer');

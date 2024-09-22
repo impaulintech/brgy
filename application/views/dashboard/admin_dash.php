@@ -1,9 +1,9 @@
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content">
-        <div class="container-fluid">
-            <!-- Small boxes (Stat box) -->
-            <!-- <div class="row">
+	<!-- Content Header (Page header) -->
+	<section class="content">
+		<div class="container-fluid">
+			<!-- Small boxes (Stat box) -->
+			<!-- <div class="row">
                 <div class="col-lg-3 col-6">
                     small box
                     <div class="small-box bg-info">
@@ -65,86 +65,86 @@
                 </div>
 
             </div> -->
-            <!-- Main row -->
-            <div class="row">
+			<!-- Main row -->
+			<div class="row">
 
-            </div>
-            <div class="col">
-                Sick Employees
-                <table class="table-list table table-striped table-bordered text-center" id="myTable">
-                    <thead style="background-color:black;" class="text-white">
-                        <tr>
-                            <th>
-                                Employee ID
-                            </th>
-                            <th>
-                                Illness
-                            </th>
-                            <th>
-                                Last Name
-                            </th>
-                            <th>
-                                First Name
-                            </th>
-                            <th>
-                                Middle Name
-                            </th>
-                            <th>
-                                Address
-                            </th>
-                            <th>
-                                Contact
-                            </th>
-                            <th>
-                                Date Declared
-                            </th>
-                            <th>
-                                Option
-                            </th>
+			</div>
+			<div class="col">
+				Sick Employees
+				<table class="table-list table table-striped table-bordered text-center" id="myTable">
+					<thead style="background-color:black;" class="text-white">
+						<tr>
+							<th>
+								Employee ID
+							</th>
+							<th>
+								Illness
+							</th>
+							<th>
+								Last Name
+							</th>
+							<th>
+								First Name
+							</th>
+							<th>
+								Middle Name
+							</th>
+							<th>
+								Address
+							</th>
+							<th>
+								Contact
+							</th>
+							<th>
+								Date Declared
+							</th>
+							<th>
+								Option
+							</th>
 
-                        </tr>
-                    </thead>
+						</tr>
+					</thead>
 
-                    <?php foreach($sicks as $sicks) : ?>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <?= $sicks->emp_id ?>
-                            </td>
-                            <td>
-                                <?= $sicks->ill_name ?>
-                            </td>
-                            <td>
-                                <?= $sicks->lname ?>
-                            </td>
+					<?php foreach ($sicks as $sicks) : ?>
+						<tbody>
+							<tr>
+								<td>
+									<?= $sicks->emp_id ?>
+								</td>
+								<td>
+									<?= $sicks->ill_name ?>
+								</td>
+								<td>
+									<?= $sicks->lname ?>
+								</td>
 
-                            <td>
-                                <?= $sicks->fname ?>
-                            </td>
+								<td>
+									<?= $sicks->fname ?>
+								</td>
 
-                            <td>
-                                <?= $sicks->mname ?>
-                            </td>
-                            <td>
-                                <?= $sicks->address ?>
-                            </td>
+								<td>
+									<?= $sicks->mname ?>
+								</td>
+								<td>
+									<?= $sicks->address ?>
+								</td>
 
-                            <td>
-                                <?= $sicks->contact ?>
-                            </td>
-                            <td>
-                                <?= $sicks->date_declared ?>
-                            </td>
-                            <td>
-                <a href="<?= site_url('health/cure/'. $sicks->health_id) ?>"><img
-                        src="<?=base_url('assets/images/delete.png')?>" style="width:15px;" alt="delete"></a>
+								<td>
+									<?= $sicks->contact ?>
+								</td>
+								<td>
+									<?= $sicks->date_declared ?>
+								</td>
+								<td>
+									<a href="<?= site_url('health/cure/' . $sicks->health_id) ?>"><img
+											src="<?= base_url('assets/images/delete.png') ?>" style="width:15px;" alt="delete"></a>
 
-            </td>
-                        </tr>
-                    </tbody>
-                    <?php endforeach ?>
-                </table>
-            </div>
-        </div>
-    </section>
+								</td>
+							</tr>
+						</tbody>
+					<?php endforeach ?>
+				</table>
+			</div>
+		</div>
+	</section>
 </div>
