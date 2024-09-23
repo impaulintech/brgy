@@ -19,18 +19,25 @@ class Dashboard extends CI_Controller
 		$data['email'] = $this->session->userdata('email');
 		$data['address'] = $this->session->userdata('address');
 		$data['contact'] = $this->session->userdata('contact');
-		$data['schedules'] = $this->employee_model->get_schedule($user_id)['schedules'];
-		
-		$data['totalAppointmentsToday'] = $this->employee_model->get_schedule($user_id)['totalAppointmentsToday'];
-		$data['totalAppointmentsThisWeek'] = $this->employee_model->get_schedule($user_id)['totalAppointmentsThisWeek'];
-		$data['completedAppointments'] = $this->employee_model->get_schedule($user_id)['completedAppointments'];
-		$data['canceledAppointments'] = $this->employee_model->get_schedule($user_id)['canceledAppointments'];
 
 
 		if ($role == 4 || $role == 3) {
+			$data['schedules'] = $this->employee_model->get_schedules()['schedules'];
+			$data['totalAppointmentsToday'] = $this->employee_model->get_schedules()['totalAppointmentsToday'];
+			$data['totalAppointmentsThisWeek'] = $this->employee_model->get_schedules()['totalAppointmentsThisWeek'];
+			$data['completedAppointments'] = $this->employee_model->get_schedules()['completedAppointments'];
+			$data['canceledAppointments'] = $this->employee_model->get_schedules()['canceledAppointments'];
+
 			$this->load->view('templates/admin_header');
 			$this->load->view('dashboard/admin_dash', $data);
 		} else {
+
+			$data['schedules'] = $this->employee_model->get_schedule($user_id)['schedules'];
+			$data['totalAppointmentsToday'] = $this->employee_model->get_schedule($user_id)['totalAppointmentsToday'];
+			$data['totalAppointmentsThisWeek'] = $this->employee_model->get_schedule($user_id)['totalAppointmentsThisWeek'];
+			$data['completedAppointments'] = $this->employee_model->get_schedule($user_id)['completedAppointments'];
+			$data['canceledAppointments'] = $this->employee_model->get_schedule($user_id)['canceledAppointments'];
+
 			$this->load->view('templates/emp_header');
 			$this->load->view('dashboard/emp_dash', $data);
 		}

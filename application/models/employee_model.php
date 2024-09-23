@@ -69,15 +69,39 @@ class Employee_model extends CI_Model
 	// fetch all schedules
 	public function get_schedules()
 	{
-		$this->db->select('*');
+		$this->db->select('schedule.*, illness.ill_name');
 		$this->db->from('schedule');
+		$this->db->join('illness', 'illness.ill_id = schedule.ill_id', 'left');
 		$query = $this->db->get();
-		return $query->result();
+		$schedules = $query->result();
+
+		$today = date('Y-m-d');
+		$weekStart = date('Y-m-d', strtotime('monday this week'));
+		$weekEnd = date('Y-m-d', strtotime('sunday this week'));
+
+		$this->db->where('DATE(schedule.AppointmentDate)', $today);
+		$totalAppointmentsToday = $this->db->count_all_results('schedule');
+
+		$this->db->where('DATE(schedule.AppointmentDate) >=', $weekStart);
+		$this->db->where('DATE(schedule.AppointmentDate) <=', $weekEnd);
+		$totalAppointmentsThisWeek = $this->db->count_all_results('schedule');
+
+		$this->db->where('schedule.Status', 1);
+		$completedAppointments = $this->db->count_all_results('schedule');
+
+		$canceledAppointments = $this->db->count_all_results('schedule');
+
+		return [
+			'schedules' => $schedules,
+			'totalAppointmentsToday' => $totalAppointmentsToday,
+			'totalAppointmentsThisWeek' => $totalAppointmentsThisWeek,
+			'completedAppointments' => $completedAppointments,
+			'canceledAppointments' => $canceledAppointments,
+		];
 	}
 
 	public function get_schedule($user_id)
 	{
-		// Select the schedule data along with illness name
 		$this->db->select('schedule.*, illness.ill_name');
 		$this->db->from('schedule');
 		$this->db->join('user', 'user.user_id = schedule.user_id');
@@ -87,28 +111,23 @@ class Employee_model extends CI_Model
 		$query = $this->db->get();
 		$schedules = $query->result();
 
-		// Calculate additional data
 		$today = date('Y-m-d');
 		$weekStart = date('Y-m-d', strtotime('monday this week'));
 		$weekEnd = date('Y-m-d', strtotime('sunday this week'));
 
-		// Total appointments today
 		$this->db->where('schedule.user_id', $user_id);
 		$this->db->where('DATE(schedule.AppointmentDate)', $today);
 		$totalAppointmentsToday = $this->db->count_all_results('schedule');
 
-		// Total appointments this week
 		$this->db->where('schedule.user_id', $user_id);
 		$this->db->where('DATE(schedule.AppointmentDate) >=', $weekStart);
 		$this->db->where('DATE(schedule.AppointmentDate) <=', $weekEnd);
 		$totalAppointmentsThisWeek = $this->db->count_all_results('schedule');
 
-		// Completed appointments
 		$this->db->where('schedule.user_id', $user_id);
 		$this->db->where('schedule.Status', 1);
 		$completedAppointments = $this->db->count_all_results('schedule');
 
-		// Canceled appointments
 		$this->db->where('schedule.user_id', $user_id);
 		$this->db->where('schedule.Status', 0);
 		$canceledAppointments = $this->db->count_all_results('schedule');

@@ -50,7 +50,7 @@
 						.then(response => response.json())
 						.then(data => {
 							console.log(data);
-							const events = data.map(event => ({
+							const events = data.schedules.map(event => ({
 								title: event.ill_name,
 								start: event.AppointmentDate,
 							}));
@@ -65,12 +65,24 @@
 			calendar.render();
 		});
 	</script>
-	<div>
-		<h1 style="text-align: center;">Scheduling</h1>
-	</div>
 
-	<div class="container">
+	<div class="container" style="padding: 40px 20px;">
 
+
+		<div>
+			<h1 style="text-align: center;">Scheduling</h1>
+		</div>
+		<!---------------------------------------------------- modal Add ------------------------------------>
+		<button type="button" class="btn btn-dark btn-lg btn-block" data-toggle="modal" data-target="#BackdropAdd">
+			Add New
+		</button>
+		<br>
+		<div id="calendar"></div>
+
+		<br>
+		<div>
+			<h1 style="text-align: center;">Schedule logs</h1>
+		</div>
 		<table class="table-list table table-striped  text-center" id="">
 			<thead style="background-color:black;" class="text-white">
 				<tr>
@@ -115,12 +127,6 @@
 			<?php endforeach ?>
 		</table>
 
-		<!---------------------------------------------------- modal Add ------------------------------------>
-		<button type="button" class="btn btn-dark btn-lg btn-block" data-toggle="modal" data-target="#BackdropAdd">
-			Add New
-		</button>
-
-		<div id="calendar"></div>
 
 		<div class="container">
 			<div class="modal fade" id="BackdropAdd" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -206,6 +212,17 @@
 									<label for="AppointmentDate">AppointmentDate :</label>
 									<input type="date" class="form-control" placeholder="AppointmentDate" id="AppointmentDate" name="AppointmentDate"
 										value="" required="">
+								</div>
+								<div class="col">
+									<label for="ill_id">Illness :</label>
+									<select class="form-control" name="ill_id" id="ill_id" placeholder="Illness" required="">
+										<option value="1">Lagnat</option>
+										<option value="2">Trankaso</option>
+										<option value="3">Covid-19</option>
+										<option value="4">Migrane</option>
+										<option value="5">Cancer</option>
+										<option value="6">Aids</option>
+									</select>
 								</div>
 								<!-- <div class="col">
                              <label for="Description">Description :</label>

@@ -80,95 +80,97 @@
 
 				<!-- Sidebar user (optional) -->
 				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
-					<!-- <div class="image">
-                        <img src="<?= base_url('assets/images/2.jpg') ?>" 
-                        class="img-circle elevation-2"
-                            alt="User Image">
-                    </div>
-                    <div class="info">
-                    <a href="#" data-toggle="modal" data-target="#BackdropProfile"
-                            class="d-block"><span><?php echo $this->load->session->userdata('fname'); ?></span>
-                            <span><?php echo $this->load->session->userdata('lname'); ?></span></a>
-                    </div> -->
+					<div class="image">
+						<img src="<?= base_url('assets/images/2.jpg') ?>"
+							class="img-circle elevation-2"
+							alt="User Image">
+					</div>
+					<div class="info">
+						<a href="#" data-toggle="modal" data-target="#BackdropProfile"
+							class="d-block"><span><?php echo $this->load->session->userdata('fname'); ?></span>
+							<span><?php echo $this->load->session->userdata('lname'); ?></span></a>
+					</div>
+				</div>
 
 
-					<!-- Sidebar Menu -->
-					<nav class="mt-5 pb-5 mb-4 d-flex">
-						<ul class="nav nav-pills nav-sidebar flex-column mt-4 pb-4 mb-4 d-flex" data-widget="treeview" role="menu"
-							data-accordion="false">
+				<!-- Sidebar Menu -->
+				<nav class="mt-5 pb-5 mb-4 d-flex">
+					<ul class="nav nav-pills nav-sidebar flex-column mt-4 pb-4 mb-4 d-flex" data-widget="treeview" role="menu"
+						data-accordion="false">
 
-							<li class="nav-item mt-2 pb-1 mb-1 d-flex">
-								<a href="<?= site_url('checkup_record') ?>" class="nav-link">
-									<i class="nav-icon fas fa-check-circle"></i>
-									<p>
-										checkup_record
-									</p>
-								</a>
-							</li>
+						<li class="nav-item mt-1 pb-1 mb-1 d-flex">
+							<a href="<?= site_url('dashboard') ?>" class="nav-link">
+								<i class="nav-icon fa-solid fa-table-columns"></i>
+								<p>
+									Dashboard
+								</p>
+							</a>
+						</li>
 
-							<li class="nav-item mt-2 pb-1 mb-1 d-flex">
-								<a href="<?= site_url('doctorinfo') ?>" class="nav-link">
-									<i class="nav-icon fas fa-user-md"></i>
-									<p>
-										DoctorInfo
-									</p>
-								</a>
-							</li>
+						<li class="nav-item mt-2 pb-1 mb-1 d-flex">
+							<a href="<?= site_url('checkup_record') ?>" class="nav-link">
+								<i class="nav-icon fas fa-check-circle"></i>
+								<p>
+									checkup_record
+								</p>
+							</a>
+						</li>
 
-							<li class="nav-item mt-2 pb-1 mb-1 d-flex">
-								<a href="<?= site_url('nurseinfo') ?>" class="nav-link">
-									<i class="nav-icon fas fa-user-nurse"></i>
-									<p>
-										NurseInfo
-									</p>
-								</a>
-							</li>
+						<li class="nav-item mt-2 pb-1 mb-1 d-flex">
+							<a href="<?= site_url('doctorinfo') ?>" class="nav-link">
+								<i class="nav-icon fas fa-user-md"></i>
+								<p>
+									DoctorInfo
+								</p>
+							</a>
+						</li>
 
-							<li class="nav-item mt-2 pb-1 mb-1 d-flex">
-								<a href="<?= site_url('employee') ?>" class="nav-link">
-									<i class="nav-icon fa-solid fa-users"></i>
-									<p>
-										Barangay Employee
-									</p>
-								</a>
-							</li>
+						<li class="nav-item mt-2 pb-1 mb-1 d-flex">
+							<a href="<?= site_url('nurseinfo') ?>" class="nav-link">
+								<i class="nav-icon fas fa-user-nurse"></i>
+								<p>
+									NurseInfo
+								</p>
+							</a>
+						</li>
 
-							<!-- <li class="nav-item mt-1 pb-1 mb-1 d-flex">
-                            <a href="<?= site_url('dashboard') ?>" class="nav-link">
-                                <i class="nav-icon fa-solid fa-table-columns"></i>
-                                <p>
-                                    Dashboard
-                                </p>
-                            </a>
-                        </li> -->
-							<li class="nav-item nav-item mt-2 pb-1 mb-1 d-flex ">
-								<a href="<?= site_url('schedule') ?>" class="nav-link">
-									<i class="nav-icon fa fa-calendar"></i>
-									<p>
-										Schedule
-									</p>
-								</a>
-							</li>
+						<li class="nav-item mt-2 pb-1 mb-1 d-flex">
+							<a href="<?= site_url('employee') ?>" class="nav-link">
+								<i class="nav-icon fa-solid fa-users"></i>
+								<p>
+									Barangay Employee
+								</p>
+							</a>
+						</li>
 
-							<li class="nav-item mt-2 pb-1 mb-1 d-flex">
-								<a href="<?= site_url('medicalrecord') ?>" class="nav-link">
-									<i class="nav-icon fas fa-procedures"></i>
-									<p>
-										Medicalrecord
-									</p>
-								</a>
-							</li>
+						<li class="nav-item nav-item mt-2 pb-1 mb-1 d-flex ">
+							<a href="<?= site_url('schedule') ?>" class="nav-link">
+								<i class="nav-icon fa fa-calendar"></i>
+								<p>
+									Schedule
+								</p>
+							</a>
+						</li>
 
-							<li class="nav-item mt-2 pb-1 mb-1 d-flex">
-								<a href="<?= site_url('initialrecord') ?>" class="nav-link">
-									<i class="nav-icon fas fa-clipboard-list"></i>
-									<p>
-										Initial Record
-									</p>
-								</a>
-							</li>
+						<li class="nav-item mt-2 pb-1 mb-1 d-flex">
+							<a href="<?= site_url('medicalrecord') ?>" class="nav-link">
+								<i class="nav-icon fas fa-procedures"></i>
+								<p>
+									Medicalrecord
+								</p>
+							</a>
+						</li>
 
-							<!-- <li class="nav-item mt-1 pb-1 mb-1 d-flex">
+						<li class="nav-item mt-2 pb-1 mb-1 d-flex">
+							<a href="<?= site_url('initialrecord') ?>" class="nav-link">
+								<i class="nav-icon fas fa-clipboard-list"></i>
+								<p>
+									Initial Record
+								</p>
+							</a>
+						</li>
+
+						<!-- <li class="nav-item mt-1 pb-1 mb-1 d-flex">
                             <a href="<?= site_url('medicalrecord') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-cubes"></i>
                                 <p>
@@ -186,7 +188,7 @@
                             </a>
                         </li> -->
 
-							<!-- <li class="nav-item mt-1 pb-1 mb-1 ">
+						<!-- <li class="nav-item mt-1 pb-1 mb-1 ">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fa-solid fa-list-check"></i>
                                 <p>
@@ -195,26 +197,26 @@
                                 </p>
                             </a> -->
 
-							<ul class="nav nav-treeview ">
-								<li class="nav-item">
-									<a href="<?= site_url('User') ?>" class="nav-link">
-										<i class="nav-icon fa-solid fa-user"></i>
-										<p>Residents</p>
-									</a>
-								</li>
-								<li class="nav-item">
-									<a href="<?= site_url('employee') ?>" class="nav-link">
-										<i class="nav-icon fa-solid fa-users"></i>
-										<p>Employee</p>
-									</a>
-								</li>
-								<li class="nav-item">
-									<a href="<?= site_url('illness') ?>" class="nav-link">
-										<i class="nav-icon fa-solid fa-disease"></i>
-										<p>Illness</p>
-									</a>
-								</li>
-								<!-- <li class="nav-item">
+						<ul class="nav nav-treeview ">
+							<li class="nav-item">
+								<a href="<?= site_url('User') ?>" class="nav-link">
+									<i class="nav-icon fa-solid fa-user"></i>
+									<p>Residents</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="<?= site_url('employee') ?>" class="nav-link">
+									<i class="nav-icon fa-solid fa-users"></i>
+									<p>Employee</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="<?= site_url('illness') ?>" class="nav-link">
+									<i class="nav-icon fa-solid fa-disease"></i>
+									<p>Illness</p>
+								</a>
+							</li>
+							<!-- <li class="nav-item">
                                     <a href="<?= site_url('logs/emp_logs') ?>" class="nav-link">
                                     <i class="nav-icon fa-solid fa-book"></i>
                                         <p>Employee Logs</p>
@@ -226,79 +228,79 @@
                                         <p>User Logs</p>
                                     </a>
                                 </li> -->
+						</ul>
+						</li>
+
+
+						<li class="nav-item mt-2 pb-1 mb-1 ">
+							<a href="#" class="nav-link">
+								<i class="nav-icon fas fa-users"></i>
+								<p>
+									Patient Category
+									<i class="right fas fa-angle-left"></i>
+								</p>
+							</a>
+							<ul class="nav nav-treeview">
+								<li class="nav-item">
+									<a href="<?= site_url('#') ?>" class="nav-link">
+										<i class="nav-icon fas fa-female"></i>
+										<p>Pregnant</p>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="<?= site_url('#') ?>" class="nav-link">
+										<i class="nav-icon fa fa-wheelchair"></i>
+										<p>Senior Citizen</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="<?= site_url('#') ?>" class="nav-link">
+										<i class="nav-icon fas fa-syringe"></i>
+										<p>Vaccine Record</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="<?= site_url('#') ?>" class="nav-link">
+										<i class="nav-icon fas fa-book-medical"></i>
+										<p>Pedia</p>
+									</a>
+								</li>
 							</ul>
-							</li>
+						</li>
 
+						<li class="nav-item mt-2 pb-1 mb-1 ">
+							<a href="#" class="nav-link">
+								<i class="nav-icon fas fa-file-alt"></i>
+								<p>
+									Report
+									<i class="right fas fa-angle-left"></i>
+								</p>
+							</a>
+							<ul class="nav nav-treeview">
+								<li class="nav-item">
+									<a href="<?= site_url('#') ?>" class="nav-link">
+										<i class="nav-icon fas fa-female"></i>
+										<p>Checkup</p>
+									</a>
+								</li>
 
-							<li class="nav-item mt-2 pb-1 mb-1 ">
-								<a href="#" class="nav-link">
-									<i class="nav-icon fas fa-users"></i>
-									<p>
-										Patient Category
-										<i class="right fas fa-angle-left"></i>
-									</p>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="<?= site_url('#') ?>" class="nav-link">
-											<i class="nav-icon fas fa-female"></i>
-											<p>Pregnant</p>
-										</a>
-									</li>
+								<li class="nav-item">
+									<a href="<?= site_url('#') ?>" class="nav-link">
+										<i class="nav-icon fa fa-wheelchair"></i>
+										<p>Pregnant</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="<?= site_url('#') ?>" class="nav-link">
+										<i class="nav-icon fas fa-syringe"></i>
+										<p>Baby</p>
+									</a>
+								</li>
+							</ul>
+						</li>
 
-									<li class="nav-item">
-										<a href="<?= site_url('#') ?>" class="nav-link">
-											<i class="nav-icon fa fa-wheelchair"></i>
-											<p>Senior Citizen</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="<?= site_url('#') ?>" class="nav-link">
-											<i class="nav-icon fas fa-syringe"></i>
-											<p>Vaccine Record</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="<?= site_url('#') ?>" class="nav-link">
-											<i class="nav-icon fas fa-book-medical"></i>
-											<p>Pedia</p>
-										</a>
-									</li>
-								</ul>
-							</li>
-
-							<li class="nav-item mt-2 pb-1 mb-1 ">
-								<a href="#" class="nav-link">
-									<i class="nav-icon fas fa-file-alt"></i>
-									<p>
-										Report
-										<i class="right fas fa-angle-left"></i>
-									</p>
-								</a>
-								<ul class="nav nav-treeview">
-									<li class="nav-item">
-										<a href="<?= site_url('#') ?>" class="nav-link">
-											<i class="nav-icon fas fa-female"></i>
-											<p>Checkup</p>
-										</a>
-									</li>
-
-									<li class="nav-item">
-										<a href="<?= site_url('#') ?>" class="nav-link">
-											<i class="nav-icon fa fa-wheelchair"></i>
-											<p>Pregnant</p>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="<?= site_url('#') ?>" class="nav-link">
-											<i class="nav-icon fas fa-syringe"></i>
-											<p>Baby</p>
-										</a>
-									</li>
-								</ul>
-							</li>
-
-							<!-- <li class="nav-item ">
+						<!-- <li class="nav-item ">
                             <a href="#" data-toggle="modal" data-target="#BackdropHealth" class="nav-link">
                                 <i class="nav-icon fa-solid fa-file-waveform"></i>
                                 <p>
@@ -306,21 +308,21 @@
                                 </p>
                             </a>
                         </li> -->
-							<li class="nav-item nav-item mt-3 pb-1 mb-1 d-flex">
-								<a href="<?= site_url('login/logout') ?>" class="nav-link">
-									<i class="nav-icon fa-solid fa-right-from-bracket"></i>
-									<p>
-										Logout
-									</p>
-								</a>
-							</li>
+						<li class="nav-item nav-item mt-3 pb-1 mb-1 d-flex">
+							<a href="<?= site_url('login/logout') ?>" class="nav-link">
+								<i class="nav-icon fa-solid fa-right-from-bracket"></i>
+								<p>
+									Logout
+								</p>
+							</a>
+						</li>
 
 
-						</ul>
-					</nav>
-					<!-- /.sidebar-menu -->
-				</div>
-				<!-- /.sidebar -->
+					</ul>
+				</nav>
+				<!-- /.sidebar-menu -->
+			</div>
+			<!-- /.sidebar -->
 		</aside>
 
 		<!-- modal -->
